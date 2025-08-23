@@ -34,12 +34,12 @@ build-local:
 run:
 	@set -x ; \
 	(${DOCKER_CMD} rm -f ${CONTAINER_NAME} || true) && \
-	${DOCKER_CMD} run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /raid/tmp/hugginface:/root/.cache/huggingface --gpus device=0 --network=host --pull always --name ${CONTAINER_NAME} -v $$(pwd):/root --workdir /root ${TAG_LATEST} bash
+	${DOCKER_CMD} run -it --rm  -v /tmp/hugginface:/root/.cache/huggingface --gpus device=0 --pull always --name ${CONTAINER_NAME} -v $$(pwd):/root --workdir /root ${TAG_LATEST} bash
 
 .PHONY: run-local
 run-local:
 	${DOCKER_CMD} rm -f ${CONTAINER_NAME} || true
-	${DOCKER_CMD} run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /raid/tmp/hugginface:/root/.cache/huggingface --gpus device=0 --network=host --pull never --name ${CONTAINER_NAME} -v $$(pwd):/root --workdir /root ${TAG_LATEST} bash
+	${DOCKER_CMD} run -it --rm  -v /tmp/hugginface:/root/.cache/huggingface --gpus device=0 --pull never --name ${CONTAINER_NAME} -v $$(pwd):/root --workdir /root ${TAG_LATEST} bash
 
 .PHONY: exec
 exec:
