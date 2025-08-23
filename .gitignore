@@ -1,0 +1,46 @@
+# Vim
+.viminfo
+
+# Kubernetes configuration and cache files
+.bash_history
+.kube
+.cache
+
+# Claude AI conversation cache
+.claude/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local development files
+.local/
+.cache/
+.config/
+
+# Node modules (if any)
+node_modules/
+
+# Helm cache
+.helm/
+
+.aider*
+
+.nv
