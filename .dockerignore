@@ -1,3 +1,4 @@
 .kube
 .config
 .local
+.cache
